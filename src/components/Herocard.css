@@ -76,8 +76,9 @@
 .main-article-slide-show {
   /* background-color: red; */
   margin: 80px;
-  /* width: 100vw;
-  height: 60vh; */
+  width: 70%;
+  height: 300px;
+  /* overflow: hidden; */
 }
 
 .main-article-image {
@@ -86,7 +87,7 @@
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  height: auto;
+  height: 100%;
   width: 100%;
 }
 

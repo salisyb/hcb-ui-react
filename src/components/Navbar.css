@@ -36,7 +36,8 @@
   padding-inline: 100px;
   background-color: transparent;
 }
-.logo-wrapper {
+
+proi .logo-wrapper {
   width: 300px;
   height: 50px;
 }
@@ -51,10 +52,36 @@
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  /* background-color: red; */
-  height: 10%;
+
+  height: 40px;
   overflow: hidden;
   width: 14vw;
+}
+
+.__user_icon_style {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 40px;
+  border: 1px solid black;
+  padding: 10px;
+  /* background-color: red; */
+}
+._user_icon {
+  width: 100%;
+  height: 100%;
+  color: #006c67;
+  cursor: pointer;
+}
+
+._user_icon:hover {
+  color: #fff;
+}
+
+._welcome_text {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
 }
 
 .navbar-links > h1 {
@@ -141,7 +168,65 @@ a {
   text-decoration: none;
   color: #006c67;
 }
+.profile-drop-down {
+  background: rgba(255, 255, 255);
+  /* border-radius: 16px; */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11.8px);
+  -webkit-backdrop-filter: blur(11.8px);
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  position: absolute;
+  top: 70px;
+  right: 50px;
+  width: 20%;
+}
 
+.navbar_dropdown_profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+}
+.navbar_profile_icon {
+  font-size: 30px;
+}
+.navbar_dropdown_text {
+  font-family: "Poppins", sans-serif;
+}
+.navbar_dropdown_text > p {
+  font-size: 16px;
+}
+.navbar_dropdown_text > a {
+  font-size: 16px;
+}
+.navbar_dropdown_text > a {
+  font-size: 13px;
+}
+.navbar_dropdown_item {
+  padding-inline: 20px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+.navbar_dropdown_item_wrapper {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.navbar_dropdown_item_wrapper:hover {
+  background-color: rgb(175, 174, 174, 0.5);
+  cursor: pointer;
+}
+.navbar_dropdown_item_list {
+  margin-left: 10px;
+}
 @media screen and (max-width: 780px) {
   .navbar {
     position: sticky;
@@ -164,8 +249,7 @@ a {
   .navbar-button-group {
     display: none;
   }
-  .navbar-links {
-  }
+
   .logo-icon {
     /* height: 30px; */
     text-align: left;

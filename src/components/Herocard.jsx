@@ -11,7 +11,7 @@ import { clear } from '@testing-library/user-event/dist/clear'
 
 function Herocard() {
   const initalState = 0; 
-  const [images, setImages] = useState(["./images/hero-image.png", "./images/undraw_art_museum_8or4.png","./images/hero-image.png", "./images/undraw_art_museum_8or4.png","./images/hero-image.png", "./images/undraw_art_museum_8or4.png","./images/hero-image.png", "./images/undraw_art_museum_8or4.png"])
+  const [images, setImages] = useState(["./images/house/front.jpg", "./images/house/front2.jpg","./images/house/inside-1.jpg", "./images/house/door-1.jpg"])
   const [count, setCount] = useState(initalState);
   const counterRef = useRef(initalState);
 

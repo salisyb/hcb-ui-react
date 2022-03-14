@@ -1,131 +1,133 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  font-family: "Poppins", sans-serif;
 }
 
-.container {
-  height: 90vh;
-  width: 100vw;
+.register_container {
+  height: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.register__wrapper {
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(11.8px);
-  -webkit-backdrop-filter: blur(11.8px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.register_wrapper {
   width: 80%;
-  height: 80%;
-  background-blend-mode: overlay;
-  overflow: hidden;
+  height: 80vh;
+  border-radius: 60px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.register__container {
-  padding: 78px;
-  display: flex;
-  flex-direction: column;
-  justify-content: baseline;
-  align-items: center;
+.register_left_form {
+  float: left;
   width: 50%;
   height: 100%;
-  /* background-color: red; */
-}
-
-.illustrion-wrapper {
-  background: rgba(0, 108, 103, 0.3);
-  /* border-radius: 16px; */
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(11.8px);
-  -webkit-backdrop-filter: blur(11.8px);
+  padding-inline: 50px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  height: 100%;
-}
-.register__illustration {
-  height: 300px;
-  width: 400px;
-}
-
-.register__title {
-  font-family: "Noto serif" serif;
-  color: #005963;
-  font-size: 32px;
-}
-
-.margin__top {
-  margin-top: 10px;
-}
-
-.form__container {
-  /* background-color: red; */
-  display: flex;
-  width: 60%;
   flex-direction: column;
-  align-items: baseline;
+  align-items: flex-start;
+  /* background-color: yellow; */
+}
+
+.register-arrow {
+  font-size: 21px;
+  width: 21px;
+  height: 21px;
+  margin-top: 55px;
+  cursor: pointer;
+}
+
+.register_header_title {
+  margin-top: 8px;
+  font-size: 40px;
+  color: rgb(112, 112, 112);
+}
+
+.register_login_link {
+  margin-top: 7px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.register_input_wrapper {
+  padding-inline: 27px;
+  margin-top: 15px;
+  background-color: #302f2f;
+  width: 332px;
+  height: 50px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
-.form__input {
-  display: flex;
-  align-items: center;
-  color: #005963;
-  background-color: transparent;
-  margin-block: 10px;
-  padding: 7px;
-  /* height: 20px; */
-  /* outline-style: none; */
-  outline-color: #005963;
-  width: 340px;
-  border: 2px solid #005963;
-  font-family: "Noto serif" serif;
-  font-size: 13px;
-  border-radius: 6px;
+.register_input_wrapper:focus-within {
+  border: 3px solid green;
 }
 
-.form__container label {
-  font-size: 13px;
-  color: #005963;
-  font-family: "Poppins" san-serif;
-}
-.footer-title-text {
-  color: #005963;
-  margin-top: 40px;
-}
-
-.link-title {
-  color: #005963;
-}
-
-.term-text {
-  font-family: "Poppins" sans-serif;
+.register_input_details {
+  color: rgba(255, 255, 255);
   font-size: 12px;
-  margin-bottom: 10px;
+  font-weight: 400;
+}
+.register_input {
+  background-color: transparent;
+  outline-style: none;
+  border: none;
+  color: #fff;
+  font-weight: 500;
 }
 
-@media screen and (max-width: 780px) {
-  .register__wrapper {
-    height: 90%;
-    width: 90%;
-  }
-  .illustration__wrapper {
-    display: none;
-  }
-  .register__container {
-    /* background-color: red; */
-    padding: 16px;
-    width: 100%;
-    height: 100%;
-  }
-  .form__container {
-    width: 100%;
-    /* background-color: red; */
-  }
+.register-email-icon {
+  color: white;
+}
+
+.register-password-icon {
+  color: white;
+  cursor: pointer;
+}
+.register_name_wrapper {
+  width: 332px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.register_firstname {
+  border-radius: 60px 0 0 60px;
+  width: 49%;
+}
+.register_lastname {
+  border-radius: 0 60px 60px 0;
+  width: 49%;
+}
+
+.register_submit_button {
+  margin-top: 7px;
+  width: 332px;
+  height: 50px;
+  background-color: #302f2f;
+  font-size: 20;
+  font-weight: bold;
+  outline-style: none;
+  border-radius: 60px;
+  color: white;
+  cursor: pointer;
+}
+
+.register_right_image {
+  background: url("https://images.unsplash.com/photo-1482245294234-b3f2f8d5f1a4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1262&q=80")
+    center center/cover no-repeat;
+  float: right;
+  width: 50%;
+  height: 100%;
+  background-color: red;
+  border-radius: 0 60px 60px 0;
+  display: flex;
+
+  align-self: center;
+  justify-content: center;
+}
+.register_logo_icon {
+  margin-top: 11px;
+  width: 301px;
+  height: 149px;
 }

@@ -15,31 +15,14 @@ import {
 } from "../constants/auth";
 
 const initialState = {
-  token: null,
+  token: localStorage.getItem("token"),
   isAuthenticated: false,
-  isRestoringUser: true,
   isLoading: false,
   user: null,
 };
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case RESTORE_TOKEN:
-      return {
-        ...state,
-        token: action.payload.token,
-      };
-    case SET_TOKEN:
-      return {
-        ...state,
-        token: action.payload,
-        isRestoringUser: false,
-      };
-    case USER_RESTORING:
-      return {
-        ...state,
-        isRestoringUser: true,
-      };
     case USER_LOADING:
       return {
         ...state,
@@ -50,7 +33,7 @@ export default function (state = initialState, action) {
         ...state,
         isAuthenticated: true,
         user: action.payload,
-        isRestoringUser: false,
+        isLoading: false,
       };
     case UPDATE_USER:
       return {
@@ -64,6 +47,7 @@ export default function (state = initialState, action) {
         isLoading: false,
       };
     case LOGIN_SUCCESS:
+      localStorage.setItem("token", action.payload.token);
       return {
         ...state,
         ...action.payload,
@@ -76,6 +60,7 @@ export default function (state = initialState, action) {
         isLoading: false,
       };
     case REGISTER_SUCCESS:
+      localStorage.setItem("token", action.payload.token);
       return {
         ...state,
         ...action.payload,
@@ -88,7 +73,7 @@ export default function (state = initialState, action) {
         token: null,
         user: null,
         isAuthenticated: false,
-        isRestoringUser: false,
+        isLoading: false,
       };
     case LOGIN_FAIL:
     case REGISTER_FAIL:

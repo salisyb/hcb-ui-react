@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  padding-inline: 10%;
+}
+
+.sub-container {
+  background-color: red;
+  width: 20%;
+}

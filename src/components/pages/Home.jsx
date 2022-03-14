@@ -12,7 +12,7 @@ import Sections from "../Sections";
 function Home() {
   return (
     <>
-    {/* <Navbar /> */}
+    <Navbar />
     <Herocard />
     <Sections />
     <Footer />
