@@ -1,0 +1,107 @@
+.profile_container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile_page_wrapper {
+  margin-top: 50px;
+  width: 600px;
+  height: 500px;
+  display: flex;
+  padding: 15px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  /* background-color: red; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.profile_icon_wrapper {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile_icon_image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.profile_icon_overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile_camera_icon {
+  display: block;
+  color: #fff;
+  font-size: 50px;
+  opacity: 0.5;
+}
+
+.profile_icon_overlay:hover {
+  background: rgb(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.profile_camera_icon:hover {
+  display: block;
+}
+
+.profile_image_upload {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.profile_btn {
+  margin-top: 10px;
+  padding: 7px;
+  outline-style: none;
+  border: none;
+  margin-right: 10px;
+}
+
+.profile_name_text {
+  margin-top: 20px;
+  font-weight: 300;
+}
+
+.profile_settings_list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* background-color: red; */
+  width: 70%;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid black;
+  background-color: #000;
+  color: #fff;
+}
+.profile_settings_list:hover {
+  background-color: rgb(13, 95, 128);
+  color: white;
+  cursor: pointer;
+}
+
+.profile_settings_list > i {
+  font-size: 30px;
+  color: #000;
+}
+
+.profile_settings_list > p {
+  font-size: 20px;
+  font-weight: 600;
+}

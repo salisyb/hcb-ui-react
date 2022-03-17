@@ -1,0 +1,29 @@
+.discover_container {
+  margin-top: 20px;
+  padding-inline: 90px;
+  width: 100vw;
+  height: auto;
+  /* background-color: blueviolet; */
+}
+.discover_header {
+  text-align: left;
+  font-weight: 500;
+  font-size: 30px;
+}
+
+.discover_card_wrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  /* background-color: red; */
+}
+
+.discover_card {
+  margin-top: 15px;
+  width: 500px;
+  margin-right: 20px;
+  height: 200px;
+  background-color: blueviolet;
+  border-radius: 20px;
+}

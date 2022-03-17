@@ -4,7 +4,7 @@ import Button from "../Button";
 import "../Button.css";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { registerUser } from "../../redux/actions/auth";
+import { registerUser, verifyEmail } from "../../redux/actions/auth";
 import { Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { css } from "@emotion/react";
@@ -23,12 +23,15 @@ function Register() {
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
   const [register, setRegister] = useState(false);
-  const [emailVerification, setEmailVerification] = useState(true)
+  const [emailVerification, setEmailVerification] = useState(false);
+  const [verify, setVerify] = useState(false)
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone_number, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
+
+  const [otp, setOtp] = useState('')
 
 
 
@@ -115,28 +118,31 @@ function Register() {
     return true
   }
   const statusResult = () => {
-    history.push('/')
+    
+    setEmailVerification(true);
+
+    // history.push('/')
     
   }
 
+  const isVerify = (status) => {
+    if(status) {
+      setVerify(false)
+      history.push('/')
+      return;
+    }
 
-  const EmailVerification = () => {
-    return(
-      <>
-        <div style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
-              <h1 style={{fontSize: '28px'}}>Verify Your Email Address</h1>
-              <p style={{marginTop: '10px', textAlign: 'center'}}>We have sent a verification code to your email address please check and verify</p>
-        <div className="register_input_wrapper" style={ phone_error ? {borderWidth: '3', borderStyle: "solid", borderColor: 'red'} : {}}>
-              <div>
-                <input type={'tel'} name='code' className="register_input" style={{textAlign: 'centerw'}} />
-              </div>
-              {/* <i class="fa-solid fa-phone-flip register-email-icon"></i> */}
-            </div>
-            <button type="submit" value={'submit'} className="register_submit_button" onClick={(e) => handleRegister(e)}>{register ? <SyncLoader color={'white'} loading={true} css={override} size={15} /> : 'Verify Email' }</button>
-        </div>
-      </>
-    )
+    setVerify(false);
+
   }
+
+  const handleEmailVerification = () => {
+
+    setVerify(true)
+    dispatch(verifyEmail({otp}, isVerify))
+  }
+
+
 
   return (
     <>
@@ -147,7 +153,19 @@ function Register() {
 
           {/* Form Container  */}
           <div className="register_left_form">
-          {emailVerification ? <EmailVerification /> :
+          {emailVerification ? <>
+        <div style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
+              <h1 style={{fontSize: '28px'}}>Verify Your Email Address</h1>
+              <p style={{marginTop: '10px', textAlign: 'center'}}>We have sent a verification code to your email address please check and verify</p>
+        <div className="register_input_wrapper" style={ phone_error ? {borderWidth: '3', borderStyle: "solid", borderColor: 'red'} : {}}>
+              <div>
+                <input type={'text'} name='code' value={otp} className="register_input" style={{textAlign: 'center'}} onChange={(e) => setOtp(e.target.value)}/>
+              </div>
+              {/* <i class="fa-solid fa-phone-flip register-email-icon"></i> */}
+            </div>
+            <button type="submit" value={'submit'} className="register_submit_button" onClick={handleEmailVerification}>{verify ? <SyncLoader color={'white'} loading={true} css={override} size={15} /> : 'Verify Email' }</button>
+        </div>
+      </> :
           <>
             <i className="fa-solid fa-arrow-left register-arrow" onClick={() => history.push('/')}></i>
             <h1 className="register_header_title">Create Account<span style={{color: '#006C67'}}>.</span></h1>

@@ -4,96 +4,44 @@ import "./Sections.css";
 import { Link } from "react-router-dom";
 import Post from "./Post";
 
-
-
 function Sections() {
-
-  const bookArchive = [
-    {id: 1, image: 'Name'},
-    {id: 2, image: 'Name'},
-    {id: 3, image: 'Name'},
-    {id: 4, image: 'Name'},
-
-  ]
-
-  const imageArchive = [
-    {id: 1, image: './images/house/khcb/pic1.JPG'},
-    {id: 2, image: './images/house/khcb/pic.JPG'},
-    {id: 3, image: './images/house/khcb/pic3.JPG'},
-    {id: 4, image: './images/house/khcb/pic4.JPG'},
-  ]
-
+  const Archive = [
+    { id: 1, image: "./images/pic-art2.png" },
+    { id: 2, image: "./images/pic-art2.png" },
+    { id: 3, image: "./images/pic-art2.png" },
+  ];
 
   return (
     <>
       <div className="section-container">
-        <div className="section-header">
-          <div>
-            <h1 className="section-header-title">Feature's Books</h1>
-            {/* <p className="section-header-subtitle">
-              Explore exhibition gallery guides, videos, articles, and more.
-            </p> */}
-          </div>
-          <div>
-            <h3 className="section-header-left-title">
-              <u>View All Books</u>
-            </h3>
-            <div className="section-underline"></div>
-          </div>
-        </div>
-        <div className="parent-container">
-        {/* {imageArchive.map((book) => 
-            <div key={book.id} className="child-container">
-            <img
-              className="post-images"
-              src={book.image}
-              alt="whatever"
-            />
-
-            <div className="post-info-container">
-              <h4 className="post-info-header">
-                Nyprere politopi och nutrerade att DALL·E post
-              </h4>
-              <p className="post-info-subheader">
-                Bebel spemisat våss benenade. Astrolig speligen att ass chatbots
-                dill.{" "}
-              </p>
-            </div>
-          </div>)} */}
-        </div>
-
-            {/* Books sections */}
+        {/* Books sections */}
         <div className="section-header-book">
           <div>
-            <h1 className="section-header-title"> Archive Image </h1>
+            <h1 className="section-header-title">Explore Archive</h1>
+            <p>
+              Explore exhibition gallery guides, videos, articles, and more.
+            </p>
           </div>
           <div>
-            <h3 className="section-header-left-title">
-              <u>Explore Archive Image</u>
-            </h3>
             <div className="section-underline"></div>
           </div>
         </div>
         <div className="parent-container">
-          {imageArchive.map((book) => 
+          {Archive.map((book) => (
             <div key={book.id} className="child-container">
-            <img
-              className="post-images"
-              src={book.image}
-              alt="whatever"
-            />
+              <img className="post-images" src={book.image} alt="whatever" />
 
-            <div className="post-info-container">
-              <h4 className="post-info-header">
-                Nyprere politopi och nutrerade att DALL·E post
-              </h4>
-              <p className="post-info-subheader">
-                Bebel spemisat våss benenade. Astrolig speligen att ass chatbots
-                dill.{" "}
-              </p>
+              <div className="post-info-container">
+                <h4 className="post-info-header">
+                  Nyprere politopi och nutrerade att DALL·E post
+                </h4>
+                <p className="post-info-subheader">
+                  Bebel spemisat våss benenade. Astrolig speligen att ass
+                  chatbots dill.{" "}
+                </p>
+              </div>
             </div>
-          </div>)}
-
+          ))}
         </div>
         {/* Location */}
         <div className="location__wrapper">
@@ -130,8 +78,8 @@ function Sections() {
           <div className="post_image_container">
             <img
               className="post_image"
-              src="./images/house/inside-1.jpg"
-              rel="post-image"
+              src="./images/house/inside-1.jp"
+              alt="post-image"
             />
           </div>
           <div className="post__article">
@@ -146,7 +94,7 @@ function Sections() {
           <div className="post_image_container">
             <img
               className="post_image"
-              src="./images/house/door-1.jpg"
+              src="./images/house/door-1.jp"
               rel="post-image"
             />
           </div>

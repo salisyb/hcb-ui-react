@@ -24,8 +24,12 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const hangleLogin = (event) => {
+  const handleLogin = (event) => {
+    setLogin(!login)
     event.preventDefault();
+    if(!validateInput()) {
+      return;
+    }
     dispatch(
       loginUser({
         username,
@@ -33,8 +37,14 @@ function Login() {
       }, statusResult)
     );
   };
-
+  const validateInput = () => {
+    if(username.length < 3 || password.length < 3 ) {
+      return false;
+    }
+    return true
+  }
   const statusResult = () => {
+    setLogin(false)
     history.push('/')
     
   }
@@ -70,7 +80,7 @@ function Login() {
               <i class="fa-solid fa-key login-password-icon" ></i> 
             </div>
             <Link to="/password-reset" className="login_forgot_password">Forgot your Password?</Link>
-            <button type="submit" className="login_submit_button" onClick={() => setLogin(!login)}>{login ? <SyncLoader color={'white'} loading={true} css={override} size={15} /> : 'Login' }</button>
+            <button type="submit" className="login_submit_button" onClick={(e) => handleLogin(e)}> {login ? <SyncLoader color={'white'} loading={true} css={override} size={15} /> : 'Login' }</button>
             {/* <p style={{marginTop: '7px',}}>By Clicking Submit you agree to the term of services</p> */}
           </div>
 

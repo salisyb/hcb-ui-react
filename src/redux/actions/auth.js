@@ -12,6 +12,7 @@ import {
   USER_LOGOUT,
   SET_TOKEN,
   USER_RESTORING,
+  VERIFY_EMAIL,
 } from "../constants/auth";
 
 export const restoreUser = () => (dispatch, getState) => {
@@ -78,6 +79,70 @@ export const registerUser = (info, statusResult) => (dispatch) => {
     .then((response) => {
       dispatch({ type: REGISTER_SUCCESS, payload: response.data });
       statusResult();
+    })
+    .catch((error) => {
+      if (error.response) {
+        console.log(error.response.data);
+      }
+      // pass
+    });
+};
+
+export const verifyEmail = (otp, isVerify) => (dispatch, getState) => {
+  dispatch({ type: USER_LOADING });
+  //Get Token from the state
+
+  const token = getState().auth.token;
+
+  // Header
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  //Check to see if there is an token and to header
+  if (token) {
+    config.headers["Authorization"] = `Token ${token}`;
+  }
+
+  const data = JSON.stringify(otp);
+  axios
+    .post("http://127.0.0.1:8000/api/verify-email", data, config)
+    .then((response) => {
+      dispatch({ type: VERIFY_EMAIL, payload: response.data });
+      isVerify(true);
+    })
+    .catch((error) => {
+      if (error.response) {
+        console.log(error.response.data);
+      }
+      // pass
+    });
+};
+
+export const logOutUser = () => (dispatch, getState) => {
+  dispatch({ type: USER_LOADING });
+  //Get Token from the state
+
+  const token = getState().auth.token;
+
+  // Header
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  //Check to see if there is an token and to header
+  if (token) {
+    config.headers["Authorization"] = `Token ${token}`;
+  }
+
+  axios
+    .post("http://127.0.0.1:8000/api/logout", {}, config)
+    .then((response) => {
+      dispatch({ type: USER_LOGOUT });
     })
     .catch((error) => {
       if (error.response) {

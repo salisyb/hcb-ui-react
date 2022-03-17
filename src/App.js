@@ -10,6 +10,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { restoreUser } from "./redux/actions/auth";
 import About from "./components/pages/About";
 import Subscription from "./components/pages/Subscription";
+import Explore from "./components/pages/Explore";
+import Books from "./components/pages/Books";
+import Profile from "./components/pages/Profile";
+import Gallery from "./components/pages/Gallery";
 
 function App() {
   const authetication = useSelector((state) => state.auth);
@@ -27,8 +31,11 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Register} />
-          <Route path="/about" exact component={About} />
+          <Route path="/explore" exact component={Explore} />
           <Route path="/subscription" exact component={Subscription} />
+          <Route path="/category/books" exact component={Books} />
+          <Route path="/category/gallery" exact component={Gallery} />
+          <Route path="/profile" exact component={Profile} />
         </Switch>
       </Router>
     </>

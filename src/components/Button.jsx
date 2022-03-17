@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import "./Button.css"
 
 
-const STYLES = ['btn--primary', 'btn--outline', 'btn--test'];
+const STYLES = ['btn--primary', 'btn--outline',];
 
 const SIZES = ['btn--medium', 'btn--large'];
 
 function Button({ children,
+  to,
     type,
     onClick,
     buttonStyle,
@@ -17,11 +18,11 @@ function Button({ children,
     const checkButtonSize = STYLES.includes(buttonSize) ? buttonSize : SIZES[0]
 
   return (
-    <Link to='/' className='btn-mobile'>
+    <Link to={to} className='btn-mobile'>
       <button
         className={`btn ${checkButtonStyle} ${checkButtonSize}`}
         onClick={onClick}
-        type={type}
+        style={type}
       >
         {children}
       </button>

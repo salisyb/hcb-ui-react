@@ -12,6 +12,7 @@ import {
   USER_LOGOUT,
   RESTORE_TOKEN,
   USER_RESTORING,
+  VERIFY_EMAIL,
 } from "../constants/auth";
 
 const initialState = {
@@ -29,6 +30,13 @@ export default function (state = initialState, action) {
         isLoading: true,
       };
     case USER_LOADED:
+      return {
+        ...state,
+        isAuthenticated: true,
+        user: action.payload,
+        isLoading: false,
+      };
+    case VERIFY_EMAIL:
       return {
         ...state,
         isAuthenticated: true,
@@ -78,6 +86,7 @@ export default function (state = initialState, action) {
     case LOGIN_FAIL:
     case REGISTER_FAIL:
     case USER_LOGOUT:
+      localStorage.removeItem("token");
       return {
         ...state,
         token: null,

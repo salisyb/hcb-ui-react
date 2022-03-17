@@ -1,66 +1,26 @@
-import React, { useEffect } from 'react'
-import Button from './Button'
-import './Herocard.css'
-import 'react-slideshow-image/dist/styles.css'
-import { Zoom } from 'react-slideshow-image'
-import { useState, useRef } from 'react'
-import { clear } from '@testing-library/user-event/dist/clear'
-
-
-
+import React, { useEffect } from "react";
+import Button from "./Button";
+import "./Herocard.css";
+import "react-slideshow-image/dist/styles.css";
+import { Zoom } from "react-slideshow-image";
+import { useState, useRef } from "react";
+import { clear } from "@testing-library/user-event/dist/clear";
 
 function Herocard() {
-  const initalState = 0; 
-  const [images, setImages] = useState(["./images/house/front.jpg", "./images/house/front2.jpg","./images/house/inside-1.jpg", "./images/house/door-1.jpg"])
-  const [count, setCount] = useState(initalState);
-  const counterRef = useRef(initalState);
-
-
-  useEffect(() => {
-    counterRef.current = count;
-  })
-
-  useEffect(() => {
-    const interValID = setInterval(slideShow,  5000)
-
-    return () => clearInterval(interValID)
-  },[])
-
-
-  const slideShow = () => {
-    
-    if(count === images.length) {
-      setCount(0)
-      return;
-    } else {
-      setCount(counterRef.current + 1)
-    }
- 
-    
-  }
-
   return (
-    <>
-    <div className='hero-card-container'>
-      <div className='article-wrapper'>
-    <div className='main-article-slide-show fade'>
-      <img className='main-article-image' src={[images[count]]}  />
-    </div>
-  
-    <div className='main-article-text-wrapper'>
-    <h1 className='title-text'>Welcome To The Kano State History and Culture Bureau</h1>
-        <p className='subtitle-text'>Popoktigt klimatflykting. Ina jåskap. 
-          Anasm. Deng UX. 
-          Debeda digisk. Kassa hideling. 
-          Dibirat red. Svenna sitt liv bäl. 
-          Pseudokrati intryckssanera. Chatbots nyre. 
+    <div className="hero_card_container">
+      <img src="./images/hero-image.png" className="hero_card_image" />
+      <div className="hero_card_information_container">
+        <h1>Welcome To The Kano State History and Culture Bureau</h1>
+        <p>
+          Popoktigt klimatflykting. Ina jåskap. Anasm. Deng UX. Debeda digisk.
+          Kassa hideling. Dibirat red. Svenna sitt liv bäl. Pseudokrati
+          intryckssanera. Chatbots nyre.
         </p>
-        <Button buttonStyle={'btn--outline'} children={'Plan A Visit'}/>
-     </div>
-     </div>
+        <Button children={"Plan A Visit"} buttonStyle={"btn--outline"} />
+      </div>
     </div>
-    </>
-  )
+  );
 }
 
-export default Herocard
+export default Herocard;

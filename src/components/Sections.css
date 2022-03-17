@@ -1,5 +1,4 @@
 .section-container {
-  margin-block: 10px;
   padding-inline: 78px;
 }
 
@@ -25,14 +24,12 @@
   font-family: "Poppins" sans-serif;
   font-weight: 600;
   font-size: 38px;
-  color: gray;
 }
 
 .section-header-subtitle {
   font-family: "Poppins" sans-serif;
   font-weight: lighter;
   font-size: 20px;
-  color: gray;
 }
 .section-underline {
   background-color: black;
@@ -45,38 +42,38 @@
   color: gray;
 }
 .parent-container {
-  /* background-color: green; */
   margin-top: 31px;
   width: 100%;
   height: auto;
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  overflow: auto;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-.location__container,
-.parent-container::-webkit-scrollbar {
-  display: none;
 }
 
 .child-container {
+  background: rgba(255, 255, 255, 1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-shrink: 0;
   width: 400px;
-  height: 309px;
+  height: 350px;
   margin-inline: 26px;
-  /* background-color: red; */
+  cursor: pointer;
 }
 
 .post-images {
   width: 100%;
   height: auto;
+}
+.child-container:hover {
+  transform: scale(1.1);
+  transition: all 0.5s;
 }
 .post-info-container {
   width: 100%;
