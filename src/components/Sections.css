@@ -1,80 +1,218 @@
-.section-container {
-  padding-inline: 78px;
+.section_container {
+  padding-inline: 100px;
 }
+/* Book Section  */
 
-.section-header {
+.section-book-header-text {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* background-color: red; */
-  padding-inline: 60px;
+  width: 100%;
 }
-
-.section-header-book {
-  margin-top: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  /* background-color: red; */
-  padding-inline: 60px;
-}
-
-.section-header-title {
+.section-book-header-title {
   text-align: left;
   font-family: "Poppins" sans-serif;
-  font-weight: 600;
-  font-size: 38px;
+  font-weight: 400;
+  font-size: 26px;
 }
 
-.section-header-subtitle {
-  font-family: "Poppins" sans-serif;
-  font-weight: lighter;
-  font-size: 20px;
-}
-.section-underline {
-  background-color: black;
-  width: 187px;
-  height: 2;
+.section-book-header-link {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 23px;
+  color: #006c67;
 }
 
-.section-header-left-title {
-  font-family: "Poppins" sans-serif;
-  color: gray;
-}
-.parent-container {
-  margin-top: 31px;
-  width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-}
-
-.child-container {
-  background: rgba(255, 255, 255, 1);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 400px;
-  height: 350px;
-  margin-inline: 26px;
+.section_book_item {
+  list-style: none;
+  display: inline-block;
+  margin-right: 40px;
   cursor: pointer;
 }
 
-.post-images {
-  width: 100%;
-  height: auto;
+.section_book_wrapper {
+  margin-top: 20px;
+  width: 250px;
+  height: 350px;
+  background-color: red;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  overflow: hidden;
 }
-.child-container:hover {
-  transform: scale(1.1);
+
+.section_book_cover_wrapper {
+  width: 100%;
+  height: 80%;
+  overflow: hidden;
+}
+
+.section_book_cover {
+  width: 100%;
+  height: 100%;
   transition: all 0.5s;
 }
+.section_book_cover:hover {
+  transform: scale(1.1);
+}
+
+.section_book_title_wrapper {
+  padding: 14px;
+  height: 20%;
+  width: 100%;
+  background-color: #fff;
+}
+
+.section_book_title {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 300;
+  font-size: 20px;
+  color: #006c67;
+}
+
+.section-picture-header-text {
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.section-picture-header-title {
+  text-align: left;
+  font-family: "Poppins" sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+}
+
+.section-picture-header-link {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 23px;
+  color: #006c67;
+}
+
+.picture_container {
+  margin-top: 20px;
+  width: 100%;
+  height: 500px;
+  /* background-color: blueviolet; */
+  display: flex;
+}
+
+.picture_item_left {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  /* background-color: #006c67; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.picture_cover_wrapper {
+  position: absolute;
+  width: 95%;
+  height: 95%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.picture_cover {
+  width: 100%;
+  height: 100%;
+  transition: all 0.9s;
+}
+
+.picture_cover:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+.picture_cover_information {
+  position: absolute;
+  width: 95%;
+  height: 95%;
+  /* background-color: rgb(20, 20, 20, 0.2); */
+  border-radius: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 20px;
+  flex-direction: column;
+}
+
+.picture_cover_title {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 400;
+}
+.picture_cover_subtitle {
+  color: #fff;
+  opacity: 0.6;
+  font-size: 20px;
+}
+
+.picture_cover_information:hover {
+  background-color: rgb(20, 20, 20, 0.2);
+  cursor: pointer;
+}
+
+.picture_cover_information:hover .picture_cover_subtitle {
+  opacity: 1;
+}
+
+.picture_item_left:hover .picture_cover {
+  transform: scale(1.1);
+}
+
+.picture_item_right {
+  width: 50%;
+  height: 100%;
+  /* background-color: aqua; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.picture_item_wrapper {
+  width: 95%;
+  height: 95%;
+  /* background-color: red; */
+}
+
+.picture_item_group {
+  display: inline-block;
+  width: 48.4%;
+  height: 48.4%;
+  margin-right: 10px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.picture_item_group_wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.picture_image_group {
+  width: 100%;
+  height: 100%;
+}
+
+.picture_item_top {
+  height: 50%;
+  width: 100%;
+  background-color: cyan;
+}
+.picture_item_bottom {
+  height: 50%;
+  width: 100%;
+  background-color: rgb(15, 68, 68);
+}
+
 .post-info-container {
   width: 100%;
   height: auto;
@@ -152,31 +290,68 @@
 
 .post__wrapper {
   margin-top: 100px;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  /* background-color: red; */
   width: 100%;
-  height: auto;
-  padding-inline: 3%;
+  height: 450px;
 }
+
+.post_article_container {
+  list-style: none;
+  width: 100%;
+  height: 100%;
+}
+
+.post_article_wrapper {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.post_article_ {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
 .post_image_container {
   width: 50%;
+  height: 100%;
   overflow: hidden;
+  /* background-color: #006c67; */
+  object-fit: contain;
+  object-position: center;
 }
 .post_image {
   width: 100%;
-  height: 400px;
+  height: 100%;
 }
 .post__article {
   background-color: rgb(240, 240, 240);
   width: 50%;
-  height: 414px;
+  height: 100%;
   display: flex;
+  padding: 60px;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+}
+
+.post__article_title {
+  font-size: calc(2rem + 0.93897vw - 3.52113px);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.post__article_subtitle {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.post__article_link {
+  font-size: 20px;
+  color: #006c67;
+  font-weight: 500;
 }
 
 .reversed {

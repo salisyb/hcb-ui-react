@@ -6,20 +6,49 @@ import { Zoom } from "react-slideshow-image";
 import { useState, useRef } from "react";
 import { clear } from "@testing-library/user-event/dist/clear";
 
-function Herocard() {
+const ComingSoon = ({ closeOverLay }) => {
+  window.addEventListener("scroll", closeOverLay);
   return (
-    <div className="hero_card_container">
-      <img src="./images/hero-image.png" className="hero_card_image" />
-      <div className="hero_card_information_container">
-        <h1>Welcome To The Kano State History and Culture Bureau</h1>
-        <p>
-          Popoktigt klimatflykting. Ina jåskap. Anasm. Deng UX. Debeda digisk.
-          Kassa hideling. Dibirat red. Svenna sitt liv bäl. Pseudokrati
-          intryckssanera. Chatbots nyre.
-        </p>
-        <Button children={"Plan A Visit"} buttonStyle={"btn--outline"} />
+    <>
+      <div className="coming_soon_container" onClick={() => closeOverLay()}>
+        <div className="coming_soon_wrapper">
+          <h1>Coming Soon</h1>
+        </div>
       </div>
-    </div>
+    </>
+  );
+};
+
+function Herocard() {
+  const [coming_soon, setComingSoon] = useState(false);
+  console.log(coming_soon);
+  useEffect(() => {}, []);
+
+  const handleOnClick = () => {
+    setComingSoon(false);
+  };
+  return (
+    <>
+      {coming_soon && <ComingSoon closeOverLay={handleOnClick} />}
+      <div className="hero_card_container">
+        {/* <img src="./images/hero-image.png" className="hero_card_image" /> */}
+        <div className="hero_card_information_container">
+          <h1>Welcome To The Kano State History and Culture Bureau</h1>
+          <p>
+            Sometimes referred to as Kano State Museum, this is a major tourist
+            attraction given its historic importance as where Western education
+            in the North started.
+          </p>
+          <button
+            type="button"
+            className="hero-section-button"
+            onClick={() => setComingSoon(true)}
+          >
+            Plan A Visit
+          </button>
+        </div>
+      </div>
+    </>
   );
 }
 

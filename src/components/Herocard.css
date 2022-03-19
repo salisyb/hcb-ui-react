@@ -4,40 +4,86 @@
 }
 
 .hero_card_container {
+  background: url("/home/yb4/Documents/Development/react-playground/playground-react/public/images/hero-card-image.png")
+    center center/cover no-repeat;
+  height: 600px;
   width: 100%;
-  height: 10%;
-  overflow: hidden;
-  background-color: blueviolet;
-}
-
-.hero_card_image {
-  width: 100%;
-  height: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  /* box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2); */
+  object-fit: contain;
 }
 
 .hero_card_information_container {
-  position: absolute;
-  bottom: 150px;
-  left: 70px;
-  background-color: rgb(255, 255, 255, 0.5);
-  width: 578px;
-  height: 338px;
+  /* background-color: rgb(255, 255, 255, 0.5); */
+  width: 50%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding-inline: 20px;
+  padding-inline: 100px;
 }
 
 .hero_card_information_container > h1 {
   color: #000;
   font-size: 30px;
   text-align: left;
-  font-weight: 700;
+  font-weight: 400;
 }
 .hero_card_information_container > p {
   margin-block: 20px;
   color: #000;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 200;
+}
+
+.hero_card_image_ {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 70% 20% 40% 50%;
+}
+
+.hero-section-button {
+  padding-block: 10px;
+  padding-inline: 28px;
+  background-color: transparent;
+  color: #000;
+  border: 3px solid black;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.hero-section-button:hover {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Coming Soon Style */
+
+.coming_soon_container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coming_soon_wrapper {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -14,6 +14,9 @@ import Explore from "./components/pages/Explore";
 import Books from "./components/pages/Books";
 import Profile from "./components/pages/Profile";
 import Gallery from "./components/pages/Gallery";
+import BookReader from "./components/pages/BookReader";
+import { PuffLoader } from "react-spinners";
+import PdfReader from "./components/pages/PdfReader";
 
 function App() {
   const authetication = useSelector((state) => state.auth);
@@ -34,6 +37,12 @@ function App() {
           <Route path="/explore" exact component={Explore} />
           <Route path="/subscription" exact component={Subscription} />
           <Route path="/category/books" exact component={Books} />
+          <Route path="/category/books/:bookId" exact component={BookReader} />
+          <Route
+            path="/category/books/read/:bookName"
+            exact
+            component={PdfReader}
+          />
           <Route path="/category/gallery" exact component={Gallery} />
           <Route path="/profile" exact component={Profile} />
         </Switch>

@@ -25,7 +25,7 @@ function Subscription() {
           <h4>Unlimited Access to Historical Image</h4>
         </div>
         <div className="subscription_wrapper_premium">
-          <h1>Classic</h1>
+          <h1>Premium</h1>
           <h2>&#x20A6;20,000.00 / Six Month Access</h2>
           <h4>40 Book Access Per Month</h4>
           <h4>Unlimited Access to Historical Videos </h4>

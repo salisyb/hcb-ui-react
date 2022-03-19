@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Button from "../Button";
 import Navbar from "../Navbar";
 import "./Books.css";
@@ -26,7 +27,6 @@ function Books() {
       date: "14 Jan 19BC",
     },
   ];
-
   const handleSetBook = (id) => {
     const book = books.filter((book) => book.id === id)[0];
     setBook(book);
@@ -53,7 +53,16 @@ function Books() {
               <h4>Genre: {book.genre}</h4>
               <h4>Date: {book.date}</h4>
               <div className="book_viewer_button">
-                <Button children={"Add To Your Library"} />
+                <Button
+                  children={"Add To Your Library"}
+                  type={{ fontSize: "16px", marginRight: "10px" }}
+                />
+
+                <Button
+                  to={"/category/books"}
+                  children={"View Book"}
+                  type={{ fontSize: "16px" }}
+                />
               </div>
             </div>
           </div>

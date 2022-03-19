@@ -7,7 +7,7 @@ import { loginUser } from "../../redux/actions/auth";
 import { useHistory } from "react-router-dom";
 import { css } from "@emotion/react";
 import MoonLoader from "react-spinners/ClipLoader";
-import { BeatLoader, SyncLoader } from "react-spinners";
+import { SyncLoader } from "react-spinners";
 
 
 const override = css`
